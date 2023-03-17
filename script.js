@@ -17,7 +17,6 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
 }
 
 // Remove a row
