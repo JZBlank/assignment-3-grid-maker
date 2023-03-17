@@ -41,7 +41,13 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    // Grab information from DOM
+    const cellrows = document.getElementsByTagName("tr");
+
+    // Remove a column from every table row
+    for(var i=0; i < cellrows.length; i++){
+        cellrows[i].removeChild(cellrows[i].lastElementChild);
+    }
 }
 
 // Set global variable for selected color
