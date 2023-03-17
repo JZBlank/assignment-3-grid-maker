@@ -32,7 +32,11 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    // Grab information from DOM
+    const cellrows = document.getElementsByTagName("tr");
+
+    // Remove last row of table rows
+    cellrows[cellrows.length-1].remove();
 }
 
 // Remove a column
