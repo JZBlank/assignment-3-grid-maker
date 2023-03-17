@@ -17,6 +17,17 @@ function addR() {
 
 // Add a column
 function addC() {
+    // Grab information from DOM
+    const cellrows = document.getElementsByTagName("tr");
+
+    // Add a table data to all table rows
+    for(var i=0; i < cellrows.length; i++){
+        // Create new cellchild for every table row parent
+        const cellchild = document.createElement("td");
+
+        // Append child to each table row
+        cellrows[i].appendChild(cellchild);
+    }
 }
 
 // Remove a row
