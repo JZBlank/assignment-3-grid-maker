@@ -5,18 +5,31 @@ let colorSelected;
 
 // Add a row
 function addR() {
+    // Update global variables
+    numRows += 1;
+
     // Grab information from DOM
     const element = document.getElementById("grid");
+    const cellrows = document.getElementsByTagName("tr");
     const cellrow = document.createElement("tr");
     const cellchild = document.createElement("td");
 
     // Add a table row + table data
     element.appendChild(cellrow);
     cellrow.appendChild(cellchild);
+
+    // Fill row with cells until it equals to numColumns
+    for(var i=0; i < numCols; i++){
+        const cellchild = document.createElement("td");
+        cellrows[numRows-1].appendChild(cellchild);
+    }
 }
 
 // Add a column
 function addC() {
+    // Update global variables
+    numCols += 1;
+
     // Grab information from DOM
     const cellrows = document.getElementsByTagName("tr");
 
@@ -32,6 +45,9 @@ function addC() {
 
 // Remove a row
 function removeR() {
+    // Update global variables
+    numRows -= 1;
+
     // Grab information from DOM
     const cellrows = document.getElementsByTagName("tr");
 
@@ -41,6 +57,9 @@ function removeR() {
 
 // Remove a column
 function removeC() {
+    // Update global variables
+    numCols -= 1;
+
     // Grab information from DOM
     const cellrows = document.getElementsByTagName("tr");
 
