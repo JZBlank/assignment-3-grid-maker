@@ -131,5 +131,15 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    // Grab information from DOM
+    const cellrows = document.getElementsByTagName("tr");
+
+    // Iterate through entire matrix of cells
+    for(var i=0; i < cellrows.length; i++){
+        for(var j=0; j < numCols + 1; j++){
+
+            // Remove style attribute from cells
+            cellrows[i].children[j].removeAttribute("style");
+        }
+    }
 }
