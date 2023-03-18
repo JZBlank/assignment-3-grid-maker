@@ -14,6 +14,12 @@ function addR() {
     const cellrow = document.createElement("tr");
     const cellchild = document.createElement("td");
 
+    
+    // Cells listens for onclick
+    cellchild.onclick = function(){
+        cellchild.setAttribute("style", "background-color:" + colorSelected + ";");
+    }
+
     // Add a table row + table data
     element.appendChild(cellrow);
     cellrow.appendChild(cellchild);
@@ -21,6 +27,12 @@ function addR() {
     // Fill row with cells until it equals to numColumns
     for(var i=0; i < numCols; i++){
         const cellchild = document.createElement("td");
+
+        // Cells listens for onclick
+        cellchild.onclick = function(){
+            cellchild.setAttribute("style", "background-color:" + colorSelected + ";");
+        }
+
         cellrows[numRows-1].appendChild(cellchild);
     }
 }
@@ -32,11 +44,22 @@ function addC() {
 
     // Grab information from DOM
     const cellrows = document.getElementsByTagName("tr");
+    const cellchild = document.createElement("td");
+
+    // Cell listens for onclick
+    cellchild.onclick = function(){
+        cellchild.setAttribute("style", "background-color:" + colorSelected + ";");
+    }
 
     // Add a table data to all table rows
     for(var i=0; i < cellrows.length; i++){
         // Create new cellchild for every table row parent
         const cellchild = document.createElement("td");
+
+        // Cells listens for onclick
+        cellchild.onclick = function(){
+            cellchild.setAttribute("style", "background-color:" + colorSelected + ";");
+        }
 
         // Append child to each table row
         cellrows[i].appendChild(cellchild);
