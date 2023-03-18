@@ -77,7 +77,27 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    // Grab information from DOM
+    const cellrows = document.getElementsByTagName("tr");
+
+    for(var i=0; i < cellrows.length; i++){
+        for(var j=0; j < numCols + 1; j++){
+            if(cellrows[i].children[j].style){
+                if(colorSelected == "Red"){
+                    cellrows[i].children[j].style.backgroundColor = "red";
+                }
+                else if(colorSelected == "Blue"){
+                    cellrows[i].children[j].style.backgroundColor = "blue";
+                }
+                else if(colorSelected == "Green"){
+                    cellrows[i].children[j].style.backgroundColor = "green";
+                }
+                else if(colorSelected == "Yellow"){
+                    cellrows[i].children[j].style.backgroundColor = "yellow";
+                }
+            }
+        }
+    }
 }
 
 // Fill all cells
